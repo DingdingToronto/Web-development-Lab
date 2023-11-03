@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.7.34031.279
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "C#_Assignment2_JiabaoDing", "C#_Assignment2_JiabaoDing\C#_Assignment2_JiabaoDing.csproj", "{979EB7AC-F53B-4A29-B2B8-E6323388187E}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{979EB7AC-F53B-4A29-B2B8-E6323388187E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{979EB7AC-F53B-4A29-B2B8-E6323388187E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{979EB7AC-F53B-4A29-B2B8-E6323388187E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{979EB7AC-F53B-4A29-B2B8-E6323388187E}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {6163A564-44D3-42AD-93D1-A51A07E61008}
+	EndGlobalSection
+EndGlobal
