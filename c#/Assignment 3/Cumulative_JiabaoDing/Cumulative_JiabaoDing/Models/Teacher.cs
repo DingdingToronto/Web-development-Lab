@@ -14,5 +14,6 @@ namespace SchoolProject.Models
         public double TeacherSalary;
         public DateTime TeacherDate;
         public string TeacherNumber;
+        public string TeacherClass;
     }
 }

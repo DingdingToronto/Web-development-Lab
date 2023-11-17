@@ -113,7 +113,7 @@ namespace Cumulative_JiabaoDing.Controllers
             MySqlCommand cmd = Conn.CreateCommand();
 
             //SQL QUERY
-            cmd.CommandText = "Select * from Teachers where teacherid = @id";
+            cmd.CommandText = "SELECT * FROM Teachers JOIN Classes ON Teachers.teacherid = Classes.teacherid WHERE Teachers.teacherid = @id;";
             cmd.Parameters.AddWithValue("@id", id);
             cmd.Prepare();
 
@@ -129,6 +129,7 @@ namespace Cumulative_JiabaoDing.Controllers
                 double TeacherSalary = Convert.ToDouble(ResultSet["salary"]);
                 DateTime TeacherDate = Convert.ToDateTime(ResultSet["hiredate"]);
                 string TeacherNumber = ResultSet["employeenumber"].ToString();
+                string TeacherClass = ResultSet["classname"].ToString();
 
                 NewTeacher.TeacherId = TeacherId;
                 NewTeacher.TeacherFname = TeacherFname;
@@ -136,6 +137,7 @@ namespace Cumulative_JiabaoDing.Controllers
                 NewTeacher.TeacherSalary = TeacherSalary;
                 NewTeacher.TeacherDate = TeacherDate;
                 NewTeacher.TeacherNumber = TeacherNumber;
+                NewTeacher.TeacherClass = TeacherClass;
             }
 
 
