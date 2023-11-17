@@ -1,0 +1,120 @@
+﻿/* Global Styles */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #1a1a1a; /* Dark grey */
+    color: #e6e6e6; /* Light grey */
+}
+
+/* Common Container Styles */
+.container {
+    margin: 20px auto;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    background-color: #333; /* Darker grey */
+}
+
+/* Header Styles */
+h2 {
+    margin-bottom: 20px;
+    text-align: center;
+    color: #ff6666; /* Red */
+}
+
+/* Navigation Link Styles */
+.navlink {
+    display: block;
+    text-align: center;
+    padding: 10px;
+    margin-bottom: 20px;
+    color: #eee;
+    text-decoration: none;
+    border-radius: 5px;
+    background-color: #4d4d4d; /* Dark grey */
+    transition: background-color 0.3s ease-in-out;
+}
+
+    .navlink:hover {
+        background-color: #666; /* Slightly lighter grey on hover */
+    }
+
+/* Form Styles */
+form {
+    margin-bottom: 40px;
+}
+
+/* Input Styles */
+input,
+select,
+textarea {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 20px;
+    box-sizing: border-box;
+    border: 2px solid #666; /* Medium grey */
+    border-radius: 8px;
+    transition: border-color 0.3s ease-in-out;
+    background-color: #4d4d4d; /* Dark grey */
+    color: #e6e6e6; /* Light grey */
+}
+
+    input:focus,
+    select:focus,
+    textarea:focus {
+        outline: none;
+        border-color: #ff6666; /* Red */
+    }
+
+    /* Submit Button Styles */
+    input[type="submit"] {
+        padding: 14px 22px;
+        background-color: #ff6666; /* Red */
+        color: #eee;
+        cursor: pointer;
+        border: none;
+        border-radius: 8px;
+        transition: background-color 0.3s ease-in-out, transform 0.3s ease-in-out;
+    }
+
+        input[type="submit"]:hover {
+            background-color: #cc0000; /* Darker Red on Hover */
+            transform: scale(1.05);
+        }
+
+/* List Item Styles */
+.listitem {
+    margin-bottom: 30px;
+    border: 2px solid #666; /* Medium grey */
+    padding: 20px;
+    background-color: #4d4d4d; /* Dark grey */
+    border-radius: 8px;
+    transition: box-shadow 0.3s ease-in-out, transform 0.3s ease-in-out;
+}
+
+    .listitem a {
+        text-decoration: none;
+        color: #ff6666; /* Red */
+    }
+
+        .listitem a:hover {
+            text-decoration: underline;
+        }
+
+    .listitem:hover {
+        box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+        transform: scale(1.02);
+    }
+
+/* Special Container Styles */
+#containershow {
+    max-width: 600px;
+    background-color: #333; /* Darker grey */
+}
+
+#containerlist {
+    max-width: 900px;
+    background-color: #333; /* Darker grey */
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+}
