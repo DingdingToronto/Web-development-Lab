@@ -26,7 +26,7 @@ namespace Cumulative_JiabaoDing.Controllers
         [HttpGet]
         [Route("api/StudentData/ListStudent/{SearchKey?}")]
         // http://localhost:62499/api/TeacherData/ListTeacher
-        public IEnumerable<Student> ListStudent(string SearchKey = null, string SearchId = null)
+        public IEnumerable<Student> ListStudent(string SearchKey = null, string SearchId = null, DateTime? SearchDate = null)
         {
             //Create an instance of a connection
             MySqlConnection Conn = Blog.AccessDatabase();
@@ -40,10 +40,11 @@ namespace Cumulative_JiabaoDing.Controllers
             //SQL QUERY
             cmd.CommandText = "SELECT * FROM students WHERE " +
                   "(LOWER(studentfname) LIKE LOWER(@key) OR LOWER(studentlname) LIKE LOWER(@key) OR LOWER(CONCAT(studentfname, ' ', studentlname)) LIKE LOWER(@key)) " +
-                  "AND LOWER(studentnumber) LIKE LOWER(@key2)";
+                  "AND LOWER(studentnumber) LIKE LOWER(@key2)" + "AND (enroldate= @key3 OR @key3 IS NULL OR @key3 = '0001-01-01')";
 
             cmd.Parameters.AddWithValue("@key", "%" + SearchKey + "%");
             cmd.Parameters.AddWithValue("@key2", "%" + SearchId + "%");
+            cmd.Parameters.AddWithValue("@key3", SearchDate);
             cmd.Prepare();
 
 
@@ -61,6 +62,7 @@ namespace Cumulative_JiabaoDing.Controllers
                 string StudentFname = ResultSet["studentfname"].ToString();
                 string StudentLname = ResultSet["studentlname"].ToString();
                 string StudentNumber = ResultSet["studentnumber"].ToString();
+                DateTime StudentEnrolDate = Convert.ToDateTime(ResultSet["enroldate"]);
 
 
                 Student NewStudent = new Student();
@@ -68,6 +70,7 @@ namespace Cumulative_JiabaoDing.Controllers
                 NewStudent.StudentFname = StudentFname;
                 NewStudent.StudentLname = StudentLname;
                 NewStudent.StudentNumber = StudentNumber;
+                NewStudent.StudentEnrolDate = StudentEnrolDate;
 
                 //Add the Author Name to the List
                 Students.Add(NewStudent);
@@ -114,12 +117,15 @@ namespace Cumulative_JiabaoDing.Controllers
                 int StudentId = Convert.ToInt32(ResultSet["studentid"]);
                 string StudentFname = ResultSet["studentfname"].ToString();
                 string StudentLname = ResultSet["studentlname"].ToString();
+                string StudentNumber = ResultSet["studentnumber"].ToString();
+                DateTime StudentEnrolDate = Convert.ToDateTime(ResultSet["enroldate"]);
 
 
-                
                 NewStudent.StudentId = StudentId;
                 NewStudent.StudentFname = StudentFname;
                 NewStudent.StudentLname = StudentLname;
+                NewStudent.StudentNumber = StudentNumber;
+                NewStudent.StudentEnrolDate = StudentEnrolDate;
             }
 
 
